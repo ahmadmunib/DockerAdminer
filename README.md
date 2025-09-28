@@ -37,6 +37,10 @@ This setup includes:
 
 4. Start the services:
    ```bash
+   # Using the new Docker Compose (recommended)
+   docker compose up -d
+   
+   # Or using the old docker-compose (if Docker Compose plugin is not installed)
    docker-compose up -d
    ```
 
@@ -88,6 +92,14 @@ To determine the correct subnet for your Docker network:
 
 This setup includes two services:
 
+### Prerequisites
+
+This project can be run using either:
+- **Docker Compose V2** (newer version, as a Docker plugin): `docker compose`
+- **Docker Compose V1** (separate installation): `docker-compose`
+
+Both commands will work with this configuration. The newer `docker compose` command is recommended if you have Docker Compose V2 installed.
+
 ### 1. PostgreSQL
 - Image: `postgres:15`
 - Port: 5432 (internal)
@@ -104,11 +116,19 @@ This setup includes two services:
 
 To stop and remove the containers:
 ```bash
+# Using the new Docker Compose (recommended)
+docker compose down
+
+# Or using the old docker-compose (if Docker Compose plugin is not installed)
 docker-compose down
 ```
 
 To stop and remove containers along with volumes:
 ```bash
+# Using the new Docker Compose (recommended)
+docker compose down -v
+
+# Or using the old docker-compose (if Docker Compose plugin is not installed)
 docker-compose down -v
 ```
 
